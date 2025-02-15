@@ -451,12 +451,19 @@
 </template>
 <script>
 import navigation from '../components/navigation.vue'
+import router from '../router';
+import isLogin from '../utils/userValidation'
 export default {
   name: 'dashboard',
   components: {
     
     navigation
-  }
+  },
+  beforeMount(){       
+        if(isLogin()===true){
+            router.push('/')
+        }
+    }
 };
 
 </script>

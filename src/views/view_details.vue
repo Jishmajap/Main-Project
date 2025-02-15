@@ -67,7 +67,7 @@
                             <p v-if="error" class="text-red-400">{{ error }}</p>
                         </div>
 
-                        <button type="submit"
+                        <button type="submit" 
                             class="w-full text-white bg-gray-900 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 border border-neutral-900 flex items-center justify-center space-x-2">
                             <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="none" viewBox="0 0 24 24">
@@ -94,6 +94,15 @@ import { db } from '../config'
 import { collection, addDoc, getDocs, deleteDoc, doc, onSnapshot } from 'firebase/firestore'
 import navigation from '../components/navigation.vue'
 
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import router from '../router';
+import isLogin from '../utils/userValidation'
+
+const auth = getAuth();
+
+
+
+
 export default {
     name: 'view_details',
     components: {
@@ -119,12 +128,13 @@ export default {
             
             try {
                 console.log("Form data before sending:", formData.value) // Log form data before sending
-                if(formData.value.password == confirmpassword){
-                    console.log("same");
+                if(formData.value.password == confirmpassword.value){
+                    alert("same");
                 }else{
-                    alert("password does not same");
+                    alert("password does not match");
                     
                 }
+                await createUserWithEmailAndPassword(auth, formData.value.email,  formData.value.password)
                 await addDoc(collection(db, 'student'), {
                     firstName: formData.value.firstName,
                     lastName: formData.value.lastName,
@@ -168,6 +178,12 @@ export default {
             handleSubmit,
             deleteUser
         }
+    },
+    beforeMount(){       
+        if(isLogin()===true){
+            router.push('/stud_login')
+        }
     }
+    
 }
 </script>
