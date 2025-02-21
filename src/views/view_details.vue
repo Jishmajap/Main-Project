@@ -129,7 +129,7 @@ export default {
             try {
                 console.log("Form data before sending:", formData.value) // Log form data before sending
                 if(formData.value.password == confirmpassword.value){
-                    alert("same");
+                    alert("Same password");
                 }else{
                     alert("password does not match");
                     

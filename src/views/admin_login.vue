@@ -44,6 +44,8 @@ const router = useRouter()
 const handleSubmit = async () => {
     try {
         await signInWithEmailAndPassword(auth, email.value, password.value)
+        localStorage.setItem("isLogin", "true");
+        
         router.push('/dashboard')
     } catch (err) {
         switch(err.code) {
