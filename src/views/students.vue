@@ -15,13 +15,14 @@
 
   <div class="ml-[17rem] mt-[1rem] relative sm:rounded-lg">
     <table class="w-full text-sm text-left rtl:text-right text-gray-900 border">
-      <tr class="border">
+      <tr class="border"> 
         <th>Id</th>
         <th>FirstName</th>
         <th>lastName</th>
         <th>Email</th>
         <th>Institution</th>
         <th>Status</th>
+        <th>TagID</th>
       </tr>
       <tr v-for="user in users" :key="user.id" class="border">
         <td>{{ user.id }}</td>
@@ -30,6 +31,7 @@
         <td>{{ user.email }}</td>
         <td>{{ user.institution }}</td>
         <td>{{ user.status }}</td>
+        <td>{{ user.tagid }}</td>
       </tr>
     </table>
   </div>
