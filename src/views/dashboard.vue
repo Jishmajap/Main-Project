@@ -5,193 +5,65 @@
     <div class="mt-[5rem]">
       <!-- Content -->
 
-      <!--Total student-->
+      <!-- Total Students, Active Users, Inactive Users -->
       <div class="p-6">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
           <div class="bg-white rounded-md border border-gray-100 p-6 shadow-md shadow-black/5">
             <div class="flex justify-between mb-6">
               <div>
-                <div class="flex items-center mb-1">
-                </div>
                 <div class="student-count">
-                  <h1 class="text-2xl font-semibold">{{ studentCount }}</h1>
-                  <div class="text-sm font-medium text-gray-400">Total Students</div>
+                  <h1 class="text-2xl font-semibold text-blue-600">{{ studentCount }}</h1>
+                  <div class="text-sm font-medium text-gray-700">Total Students</div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!--Active Users-->
           <div class="bg-white rounded-md border border-gray-100 p-6 shadow-md shadow-black/5">
             <div class="flex justify-between mb-4">
               <div>
-                <div class="flex items-center mb-1">
-                  <div class="student-count">
-                  <h1 class="text-2xl font-semibold">{{ activeUsersCount }}</h1>
-                  <div class="text-sm font-medium text-gray-400">Active Users</div>
-                </div>
-                  
+                <div class="student-count">
+                  <h1 class="text-2xl font-semibold text-green-600">{{ activeUsersCount }}</h1>
+                  <div class="text-sm font-medium text-gray-700">Active Users</div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!--Inactive Users-->
           <div class="bg-white rounded-md border border-gray-100 p-6 shadow-md shadow-black/5">
             <div class="flex justify-between mb-6">
               <div>
-                <div class="text-2xl font-semibold mb-1">{{ inactiveUsersCount }}</div>
-                <div class="text-sm font-medium text-gray-400">Inactive Users</div>
+                <div class="text-2xl font-semibold mb-1 text-red-600">{{ inactiveUsersCount }}</div>
+                <div class="text-sm font-medium text-gray-700">Inactive Users</div>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- Student Activities -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-          <div
-            class="p-6 relative flex flex-col min-w-0 mb-4 lg:mb-0 break-words bg-gray-50 dark:bg-gray-800 w-full shadow-lg rounded">
-            <div class="rounded-t mb-0 px-0 border-0">
-              <div class="flex flex-wrap items-center px-4 py-2">
-                <div class="relative w-full max-w-full flex-grow flex-1">
-                  <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Users</h3>
-                </div>
-              </div>
-              <div class="block w-full overflow-x-auto">
-                <table class="items-center w-full bg-transparent border-collapse">
-                  <thead>
-                    <tr>
-                      <th
-                        class="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                        Role</th>
-                      <th
-                        class="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                        Amount</th>
-                      <th
-                        class="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px">
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="text-gray-700 dark:text-gray-100">
-                      <th
-                        class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                        Administrator</th>
-                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        1</td>
-                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        <div class="flex items-center">
-                          <span class="mr-2">70%</span>
-                          <div class="relative w-full">
-                            <div class="overflow-hidden h-2 text-xs flex rounded bg-blue-200">
-                              <div style="width: 70%"
-                                class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-600">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr class="text-gray-700 dark:text-gray-100">
-                      <th
-                        class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                        User</th>
-                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        6</td>
-                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        <div class="flex items-center">
-                          <span class="mr-2">40%</span>
-                          <div class="relative w-full">
-                            <div class="overflow-hidden h-2 text-xs flex rounded bg-blue-200">
-                              <div style="width: 40%"
-                                class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr class="text-gray-700 dark:text-gray-100">
-                      <th
-                        class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                        User</th>
-                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        5</td>
-                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        <div class="flex items-center">
-                          <span class="mr-2">45%</span>
-                          <div class="relative w-full">
-                            <div class="overflow-hidden h-2 text-xs flex rounded bg-pink-200">
-                              <div style="width: 45%"
-                                class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr class="text-gray-700 dark:text-gray-100">
-                      <th
-                        class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                        User</th>
-                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        4</td>
-                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        <div class="flex items-center">
-                          <span class="mr-2">60%</span>
-                          <div class="relative w-full">
-                            <div class="overflow-hidden h-2 text-xs flex rounded bg-red-200">
-                              <div style="width: 60%"
-                                class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
           <div class="bg-white border border-gray-100 shadow-md shadow-black/5 p-6 rounded-md">
             <div class="flex justify-between mb-4 items-start">
-              
-              <div class="dropdown">
-                <button type="button" class="dropdown-toggle text-gray-400 hover:text-gray-600"><i
-                    class="ri-more-fill"></i></button>
-                <ul
-                  class="dropdown-menu shadow-md shadow-black/5 z-30 hidden py-1.5 rounded-md bg-white border border-gray-100 w-full max-w-[140px]">
-                  <li>
-                    <a href="#"
-                      class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50">Profile</a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50">Settings</a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50">Logout</a>
-                  </li>
-                </ul>
-              </div>
+              <h2 class="font-bold text-base text-gray-800">Student Activities</h2>
             </div>
 
-            <!--  Activities Table --> 
-            <div class="overflow-hidden">
-              <table class="w-full min-w-[540px]">
+            <!-- Activities Table -->
+            <div class="overflow-x-auto">
+              <table class=" ">
                 <thead>
                   <tr>
-                    <th class="py-2 px-4 border-b border-b-gray-50">Student Name</th>
-                    <th class="py-2 px-4 border-b border-b-gray-50">Tag ID</th>
-                    <th class="py-2 px-4 border-b border-b-gray-50">Tap Count</th>
+                    <th class="py-2 border-b border-b-gray-50 text-left text-gray-700">Student Name</th>
+                    <th class="py-2 px-4 border-b border-b-gray-50 text-left text-gray-700">Tag ID</th>
+                    <th class="py-2 px-4 border-b border-b-gray-50 text-left text-gray-700">Tap Count</th>
+                    <th class="py-2 px-4 border-b border-b-gray-50 text-left text-gray-700">Last Tap Time</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="activity in activities" :key="activity.tagid">
-                    <td class="py-2 px-4 border-b border-b-gray-50">{{ activity.name }}</td>
+                  <tr v-for="activity in activities" :key="activity.tagid" class="hover:bg-gray-50">
+                    <td class="py-2 px-4 border-b border-b-gray-50">{{ activity.fullName }}</td>
                     <td class="py-2 px-4 border-b border-b-gray-50">{{ activity.tagid }}</td>
-                    <td class="py-2 px-4 border-b border-b-gray-50">{{ activity.tapCount }}</td>
+                    <td class="py-2 px-4 border-b border-b-gray-50">{{ activity.tagtapCount }}</td>
+                    <td class="py-2 px-4 border-b border-b-gray-50">{{ formatTime(activity.lastTapTimestamp) }}</td>
                   </tr>
                 </tbody>
               </table>
@@ -205,7 +77,7 @@
 
 <script>
 import navigation from '../components/navigation.vue'
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { collection, getDocs, getFirestore, Timestamp } from "firebase/firestore";
 
 export default {
   name: 'dashboard',
@@ -221,6 +93,23 @@ export default {
     };
   },
   methods: {
+    formatTime(timestamp) {
+      if (!timestamp) return 'N/A';
+      
+      // Convert Firestore Timestamp to JavaScript Date
+      const date = timestamp instanceof Timestamp 
+        ? timestamp.toDate() 
+        : new Date(timestamp);
+      
+      return date.toLocaleString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+    },
     async fetchStudentCount() {
       try {
         const db = getFirestore();
@@ -247,16 +136,31 @@ export default {
     async fetchActivities() {
       try {
         const db = getFirestore();
-        const querySnapshot = await getDocs(collection(db, "activities"));
-        const activitiesData = [];
 
-        querySnapshot.forEach((doc) => {
-          const activityData = doc.data();
-          activitiesData.push({
-            name: activityData.name,
-            tagid: activityData.tagid,
-            tapCount: activityData.tapCount
-          });
+        // Fetch data from "student" collection
+        const studentSnapshot = await getDocs(collection(db, "student"));
+        const students = studentSnapshot.docs.map(doc => ({
+          fullName: `${doc.data().firstName} ${doc.data().lastName}`,
+          tagid: doc.data().tagid
+        }));
+
+        // Fetch data from "TagTapCount" collection
+        const tagTapSnapshot = await getDocs(collection(db, "TagTapCount"));
+        const tagTapData = tagTapSnapshot.docs.map(doc => ({
+          tagid: doc.id,
+          tagtapCount: doc.data().tapCount || 0,
+          lastTapTimestamp: doc.data().lastTapTimestamp || null
+        }));
+
+        // Merge data based on tagid
+        const activitiesData = students.map(student => {
+          const tagTap = tagTapData.find(tap => tap.tagid === student.tagid) || {};
+          return {
+            fullName: student.fullName,
+            tagid: student.tagid,
+            tagtapCount: tagTap.tagtapCount || 0,
+            lastTapTimestamp: tagTap.lastTapTimestamp || null
+          };
         });
 
         this.activities = activitiesData;
@@ -271,6 +175,8 @@ export default {
   }
 };
 </script>
+
+
 
 
 
