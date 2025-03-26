@@ -2,7 +2,7 @@
   <navigation />
 
   <main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-gray-200 min-h-screen transition-all main">
-    <div class="mt-[5rem]">
+    <div >
       <!-- Content -->
 
       <!-- Total Students, Active Users, Inactive Users -->
@@ -78,6 +78,7 @@
 <script>
 import navigation from '../components/navigation.vue'
 import { collection, getDocs, getFirestore, Timestamp } from "firebase/firestore";
+
 
 export default {
   name: 'dashboard',
@@ -172,7 +173,12 @@ export default {
   mounted() {
     this.fetchStudentCount();
     this.fetchActivities();
-  }
+    
+        
+    
+  },
+
+  
 };
 </script>
 

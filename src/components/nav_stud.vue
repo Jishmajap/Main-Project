@@ -47,7 +47,7 @@ export default {
         sessionStorage.clear(); // Clear session data as well
 
         // Redirect to the login page
-        window.location.href = '/stud_login'; 
+        window.location.href = '/'; 
       } catch (error) {
         console.error('Logout failed:', error.message);
         alert('Failed to log out. Please try again.');

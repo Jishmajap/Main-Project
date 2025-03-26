@@ -50,7 +50,7 @@ export default {
     },
     beforeMount() {
         if (isLogin() === true) {
-            router.push('/stud_login');
+            router.push('/request');
         }
     },
     setup() {
@@ -68,7 +68,7 @@ export default {
                 await fetchCurrentBalance();
             } else {
                 console.warn('No user logged in');
-                router.push('/stud_login');
+                router.push('/request');
             }
         });
 
