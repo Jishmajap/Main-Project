@@ -77,7 +77,7 @@ export default {
   },
   beforeMount(){       
         if(isLogin()===true){
-            router.push('/stud_login')
+            router.push('/')
         }
     }
 };

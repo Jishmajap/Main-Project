@@ -91,9 +91,11 @@
 </template>
 
 <script>
+import { onMounted } from 'vue';
 import navigation from '../components/navigation.vue'
 
 import { useRouter } from 'vue-router' // Import the router
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 export default {
   name: 'analytics',
@@ -102,7 +104,16 @@ export default {
   },
   setup() {
     const router = useRouter() // Initialize the router
-    
+    onMounted(()=>{
+      const auth = getAuth();
+    // Listen for authentication state changes
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        console.log("No authenticated user.");
+        router.push("/"); // Redirect to login if unauthenticated
+      }
+    });
+    })
     return {
       router // Make router available to the component
     }

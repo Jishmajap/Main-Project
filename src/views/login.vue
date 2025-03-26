@@ -123,8 +123,10 @@ const handleSubmit = async () => {
     } 
     
     else if (userType.value === "student") {
-      
+
       const db = getFirestore();
+      await signInWithEmailAndPassword(auth, email.value, password.value);
+
       const studentQuery = query(
         collection(db, "student"),
         where("email", "==", email.value),

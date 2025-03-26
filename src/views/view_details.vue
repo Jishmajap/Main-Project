@@ -94,7 +94,7 @@ import { ref, onMounted } from 'vue'
 import { db } from '../config'
 import { collection, addDoc, getDocs, deleteDoc, doc, onSnapshot } from 'firebase/firestore'
 import navigation from '../components/navigation.vue'
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import router from '../router';
 import isLogin from '../utils/userValidation'
 
@@ -184,6 +184,14 @@ export default {
 
         // Real-time updates
         onMounted(() => {
+            const auth = getAuth();
+            // Listen for authentication state changes
+            onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                console.log("No authenticated user.");
+                router.push("/"); // Redirect to login if unauthenticated
+            }
+            });
             fetchDropdownItems();
             const unsubscribe = onSnapshot(collection(db, 'student'), (snapshot) => {
                 users.value = snapshot.docs.map(doc => ({

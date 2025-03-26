@@ -76,8 +76,10 @@
 </template>
 
 <script>
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import navigation from '../components/navigation.vue'
 import { collection, getDocs, getFirestore, Timestamp } from "firebase/firestore";
+import router from '../router';
 
 
 export default {
@@ -171,10 +173,17 @@ export default {
     }
   },
   mounted() {
+    const auth = getAuth();
+    // Listen for authentication state changes
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        console.log("No authenticated user.");
+        router.push("/"); // Redirect to login if unauthenticated
+      }
+    });
     this.fetchStudentCount();
     this.fetchActivities();
     
-        
     
   },
 
