@@ -16,21 +16,21 @@
   <div class="ml-[17rem] mt-[1rem] relative sm:rounded-lg">
     <table class="w-full text-sm text-left rtl:text-right text-gray-900 border">
       <tr class="border"> 
-        <th>Id</th>
+        <th>ID</th> <!-- Updated header for numeric ID -->
         <th>FirstName</th>
-        <th>lastName</th>
+        <th>LastName</th>
         <th>Email</th>
         <th>Institution</th>
-        <th>Status</th>
+       
         <th>TagID</th>
       </tr>
-      <tr v-for="user in users" :key="user.id" class="border">
-        <td>{{ user.id }}</td>
+      <tr v-for="(user, index) in users" :key="user.id" class="border">
+        <td>{{ index + 1 }}</td> <!-- Display numeric ID -->
         <td>{{ user.firstName }}</td>
         <td>{{ user.lastName }}</td>
         <td>{{ user.email }}</td>
         <td>{{ user.institution }}</td>
-        <td>{{ user.status }}</td>
+        
         <td>{{ user.tagid }}</td>
       </tr>
     </table>
@@ -40,8 +40,8 @@
 <script>
 import navigation from '../components/navigation.vue';
 import { collection, getDocs, getFirestore } from "firebase/firestore";
- import router from '../router';
-import isLogin from '../utils/userValidation'
+import router from '../router';
+import isLogin from '../utils/userValidation';
 
 export default {
   name: 'students',
@@ -75,11 +75,10 @@ export default {
   mounted() {
     this.fetchStudentData();
   },
-  beforeMount(){       
-        if(isLogin()===true){
-            router.push('/')
-        }
+  beforeMount() {       
+    if (isLogin() === true) {
+      router.push('/');
     }
+  }
 };
-
 </script>

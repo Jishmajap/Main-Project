@@ -35,14 +35,14 @@
         </ul>
       </li>
 
-      <li class="mb-1 group">
+      <!-- <li class="mb-1 group">
         <a href="/analytics"
           class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
           <i class='bx bxl-blogger mr-3 text-lg'></i>
           <span class="text-sm">Analytics</span>
           <i class="ri-arrow-right-s-line ml-auto group-[.selected]:rotate-90"></i>
         </a>
-      </li>
+      </li> -->
 
       <li class="mb-1 group">
         <a @click="logout" href="javascript:void(0);"
